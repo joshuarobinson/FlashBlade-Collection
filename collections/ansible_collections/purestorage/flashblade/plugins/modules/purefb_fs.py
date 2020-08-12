@@ -530,7 +530,7 @@ def delete_fs(module, blade):
 
             if module.params['eradicate']:
                 try:
-                    blade.file_systems.delete_file_systems(module.params['name'])
+                    blade.file_systems.delete_file_systems(name=module.params['name'])
                 except Exception:
                     module.fail_json(msg="Failed to delete filesystem {0}.".format(module.params['name']))
         except Exception:
